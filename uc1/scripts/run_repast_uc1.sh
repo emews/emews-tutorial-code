@@ -65,7 +65,21 @@ fi
 # return values and the optional timeout.
 set +e
 echo "$PARAM_LINE"
-$TIMEOUT_CMD $JAVA -Xmx1536m -XX:-UseLargePages -cp "$cPath" repast.simphony.batch.InstanceRunner \
+$TIMEOUT_CMD $JAVA -Xmx1536m -XX:-UseLargePages \
+  -XX:+IgnoreUnrecognizedVMOptions \
+  --add-opens java.base/java.util=ALL-UNNAMED \
+  --add-opens java.base/java.text=ALL-UNNAMED \
+  --add-opens java.desktop/java.awt.font=ALL-UNNAMED \
+  --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
+  --add-modules=ALL-SYSTEM \
+  --add-exports=java.base/jdk.internal.ref=ALL-UNNAMED \
+  --add-exports=java.desktop/sun.awt=ALL-UNNAMED \
+  --add-exports=java.base/java.lang=ALL-UNNAMED \
+  --add-opens java.base/java.util=ALL-UNNAMED \
+  --add-exports=java.xml/com.sun.org.apache.xpath.internal.objects=ALL-UNNAMED \
+  --add-exports=java.xml/com.sun.org.apache.xpath.internal=ALL-UNNAMED \
+  --add-opens java.base/java.lang=ALL-UNNAMED \
+   -cp "$cPath" repast.simphony.batch.InstanceRunner \
    -pxml "$pxml" \
    -scenario "$scenario" \
    -id 1 "$PARAM_LINE"
