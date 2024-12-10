@@ -5,8 +5,8 @@ After downloading the Zombies model (see [here](https://github.com/emews/emews-t
 
 
 ````bash
-1 $ cd swift
-2 $ ./run_uc1.sh exp1 cfgs/uc1.cfg
+1: $ cd swift
+2: $ ./run_uc1.sh exp1 cfgs/uc1.cfg
 ````
 1. Change directory into the `swift` subdirectory.
 2. This runs the workflow through the `run_uc1.sh` file, providing two arguments. The first is an experiment ID (in this case `exp1`), and the second is a path to the `uc1.cfg` configuration file, which is inside the `cfgs` directory.
