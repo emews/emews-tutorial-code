@@ -52,7 +52,6 @@ exp1
 
 EMEWS project template
 -----------------------
-<!-- TODO: add how to run this -->
 
 This project is compatible with swift-t v. 1.3+. Earlier
 versions will NOT work.
