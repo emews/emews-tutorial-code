@@ -1,6 +1,6 @@
 # EMEWS Tutorial Code Repository #
 
-This repository contains the example code for the [EMEWS tutorial](https://jozik.github.io/emews_next_gen_tutorial_tests/).
+This repository contains the example code for the [EMEWS tutorial][tutorial url].
 
 The easiest way to download the example code is by cloning the repository:
 
@@ -23,3 +23,5 @@ $ cd emews-tutorial-code/uc1
 $ curl -L -O https://github.com/emews/emews-tutorial-code/releases/latest/download/complete_model.jar
 $ unzip complete_model.jar -d complete_model 
 ```
+
+[tutorial url]: https://jozik.github.io/emews_next_gen_tutorial_tests

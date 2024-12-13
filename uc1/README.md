@@ -1,6 +1,6 @@
 Running the UC1 example
 ----
-You will need a working EMEWS install to run this workflow. See the [Quick Start guide](https://jozik.github.io/emews_next_gen_tutorial_tests/#quickstart) in the EMEWS tutorial.
+You will need a working EMEWS install to run this workflow. See the [Quick Start guide][tutorial quickstart] in the EMEWS tutorial.
 
 After downloading the Zombies model (see [here](https://github.com/emews/emews-tutorial-code/blob/main/README.md)), you can issue the following commands to run the complete UC1 workflow:
 
@@ -83,3 +83,7 @@ The directories are intended to contain the following:
  * `scripts` - any necessary scripts (e.g. scripts to launch a model), excluding
     scripts used to run the workflow.
  * `swift` - swift code
+
+
+[tutorial url]: https://jozik.github.io/emews_next_gen_tutorial_tests
+[tutorial quickstart]: https://jozik.github.io/emews_next_gen_tutorial_tests/#quickstart
