@@ -24,4 +24,4 @@ $ curl -L -O https://github.com/emews/emews-tutorial-code/releases/latest/downlo
 $ unzip complete_model.jar -d complete_model 
 ```
 
-[tutorial url]: https://jozik.github.io/emews_next_gen_tutorial_tests
+[tutorial url]: https://emews.org/emews-tutorial/

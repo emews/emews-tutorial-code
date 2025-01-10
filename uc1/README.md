@@ -12,7 +12,7 @@ After downloading the Zombies model (see [here](https://github.com/emews/emews-t
 1. Change directory into the `swift` subdirectory.
 2. This runs the workflow through the `run_uc1.sh` file, providing two arguments. The first is an experiment ID (in this case `exp1`), and the second is a path to the `uc1.cfg` configuration file, which is inside the `cfgs` directory.
 
-Once the workflow completes, you will see 50 instance directories (corresponding to the 50 lines in the UPF file) along with the following ouputs in the `experiments/exp1` directory:
+Once the workflow completes, you will see 50 instance directories (corresponding to the 50 lines in the UPF file) along with the following outputs in the `experiments/exp1` directory:
 
 ````
 exp1
@@ -85,5 +85,5 @@ The directories are intended to contain the following:
  * `swift` - swift code
 
 
-[tutorial url]: https://jozik.github.io/emews_next_gen_tutorial_tests
-[tutorial quickstart]: https://jozik.github.io/emews_next_gen_tutorial_tests/#quickstart
+[tutorial url]: https://emews.org/emews-tutorial/
+[tutorial quickstart]: https://emews.org/emews-tutorial/#quickstart
