@@ -130,6 +130,10 @@ def run(exp_id: str, params: Dict):
 
             reprioritize(task_queue, tasks)
 
+        # if total_completed is less than the seach space size
+        # there may be tasks waiting in the queue. We clear them here.
+        task_queue.clear_queues()
+
     finally:
         if task_queue is not None:
             task_queue.close()
