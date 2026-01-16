@@ -10,16 +10,16 @@ fi
 # Uncomment to turn on swift/t logging. Can also set TURBINE_LOG,
 # TURBINE_DEBUG, and ADLB_DEBUG to 0 to turn off logging
 # export TURBINE_LOG=1 TURBINE_DEBUG=1 ADLB_DEBUG=1
-export EMEWS_PROJECT_ROOT=$( cd $( dirname $0 )/.. ; /bin/pwd )
+export EMEWS_PROJECT_ROOT=$( cd "$( dirname "$0" )/.." ; /bin/pwd )
 # source some utility functions used by EMEWS in this script
 source "${EMEWS_PROJECT_ROOT}/etc/emews_utils.sh"
 
 export EXPID=$1
-export TURBINE_OUTPUT=$EMEWS_PROJECT_ROOT/experiments/$EXPID
+export TURBINE_OUTPUT="$EMEWS_PROJECT_ROOT/experiments/$EXPID"
 check_directory_exists
 
-CFG_FILE=$2
-source $CFG_FILE
+CFG_FILE="$2"
+source "$CFG_FILE"
 
 echo "--------------------------"
 echo "WALLTIME:              $CFG_WALLTIME"
@@ -41,8 +41,8 @@ export PPN=$CFG_PPN
 export TURBINE_JOBNAME="${EXPID}_job"
 export TURBINE_MPI_THREAD=1 
 
-mkdir -p $TURBINE_OUTPUT
-cp $CFG_FILE $TURBINE_OUTPUT/cfg.cfg
+mkdir -p "$TURBINE_OUTPUT"
+cp "$CFG_FILE" "$TURBINE_OUTPUT/cfg.cfg"
 
 # TODO: If R cannot be found, then these will need to be
 # uncommented and set correctly.
@@ -50,8 +50,8 @@ cp $CFG_FILE $TURBINE_OUTPUT/cfg.cfg
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$R_HOME/lib
 
 # EQSQL swift extension location
-EQSQL=$EMEWS_PROJECT_ROOT/ext/EQ-SQL
-EMEWS_EXT=$EMEWS_PROJECT_ROOT/ext/emews
+EQSQL="$EMEWS_PROJECT_ROOT/ext/EQ-SQL"
+EMEWS_EXT="$EMEWS_PROJECT_ROOT/ext/emews"
 
 # TODO: if Python cannot be found then uncomment
 # and edit this line.
@@ -61,7 +61,7 @@ EMEWS_EXT=$EMEWS_PROJECT_ROOT/ext/emews
 # X package" type Python errors then append
 # the missing package's path to the PYTHONPATH
 # variable below, separating the entries with ":"
-export PYTHONPATH=$EMEWS_PROJECT_ROOT/python:$EQSQL
+export PYTHONPATH="$EMEWS_PROJECT_ROOT/python:$EQSQL"
 
 # Resident task workers and ranks
 export TURBINE_RESIDENT_WORK_WORKERS=1
@@ -108,8 +108,8 @@ log_script
 # echo's anything following this to standard out
 set -x
 SWIFT_FILE=ackley_worker_pool.swift
-swift-t -n $PROCS $MACHINE -p -I $EQSQL -r $EQSQL \
-    -I $EMEWS_EXT -r $EMEWS_EXT \
+swift-t -n $PROCS $MACHINE -p -I "$EQSQL" -r "$EQSQL" \
+    -I "$EMEWS_EXT" -r "$EMEWS_EXT" \
     -e TURBINE_MPI_THREAD \
     -e TURBINE_OUTPUT \
     -e EMEWS_PROJECT_ROOT \
@@ -120,5 +120,5 @@ swift-t -n $PROCS $MACHINE -p -I $EQSQL -r $EQSQL \
     -e EQ_DB_RETRY_THRESHOLD \
     -e PYTHONPATH \
     -e RESIDENT_WORK_RANK \
-    $EMEWS_PROJECT_ROOT/swift/$SWIFT_FILE \
+    "$EMEWS_PROJECT_ROOT/swift/$SWIFT_FILE" \
     $CMD_LINE_ARGS
