@@ -14,8 +14,8 @@ model_output_file_name : output.csv
 # R, python, None
 me_language: python
 # omit file extension
-me_file_name: ackley
-me_cfg_file_name: ackley_cfg
+me_file_name: me
+me_cfg_file_name: me_cfg
 
 eqsql_db_path: /home/nick/tmp/db
 
