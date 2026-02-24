@@ -12,7 +12,7 @@ task_type: 0
 pool_launch_script: ../swift/run_ackley_worker_pool.sh
 pool_cfg_file: ../swift/cfgs/ackley_worker_pool.cfg
 
-# Ackely Example ME configuration
+# Ackley Example ME configuration
 search_space_size: 50
 sample_dimensions: 4
 total_completed: 40
